@@ -1,0 +1,122 @@
+.background {
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+    /*transform: scale(1.1);*/
+}
+
+.backgroundColorLayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.container > div, .container > tr, .container > a {
+    text-decoration: none;
+    color: white;
+}
+
+.container > *:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+    .container > *:first-child {
+        margin-top: 10px;
+    }
+
+    .container > *:nth-child(3) {
+        max-height: 30px;
+    }
+
+.platformCountContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .platformCountContainer > div {
+        display: flex;
+        align-items: center;
+        padding: 3px 7px;
+    }
+
+    .platformCountContainer > div > span {
+        margin-left: 5px;
+    }
+
+    .platformCountContainer > div > img {
+        height: 24px;
+    }
+
+.pvpContainer {
+    display: flex;
+    justify-content: center;
+}
+
+    .pvpContainer > form > select {
+        border: 1px solid white;
+        padding: 3px 5px;
+        border-radius: 0;
+        height: 100%;
+    }
+
+    .pvpContainer > form > button {
+        border: 1px solid white;
+        border-radius: 0;
+        padding: 3px 15px;
+        margin: 0 10px;
+        color: white;
+        background-color: transparent;
+        height: 100%;
+    }
+
+.fastestAvailableRunContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .fastestAvailableRunContainer > a {
+        color: white;
+        text-decoration: none;
+    }
+
+.table {
+    color: white;
+    width: 100%;
+    border-top: 2px solid white;
+}
+
+    .table > tbody > tr {
+        height: 24px;
+    }
+
+        .table > tbody > tr > td > a {
+            color: white;
+            text-decoration: none;
+        }
+
+    .table tr:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+
+    .table > tbody > tr > td {
+        height: inherit;
+        text-align: center;
+    }
+
+        .table > tbody > tr > td > img {
+            height: 24px;
+            vertical-align: inherit;
+        }

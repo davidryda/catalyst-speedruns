@@ -1,0 +1,50 @@
+.container {
+}
+
+.table {
+    color: white;
+    width: 100%;
+    border-top: 2px solid white;
+    table-layout: initial;
+}
+
+    .table > thead {
+        border-top: 2px solid white;
+    }
+
+    .table > tbody > tr {
+        height: 24px;
+    }
+
+        .table > tbody > tr > td > a {
+            color: white;
+            text-decoration: none;
+        }
+
+    .table tr:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+
+    .table > tbody > tr > td {
+        height: inherit;
+        text-align: center;
+    }
+
+        .table > tbody > tr:last-child > td:nth-child(2) {
+            border-top: 2px solid white;
+        }
+
+        .table > tbody > tr > td:first-child {
+            text-align: center;
+        }
+
+        .table > tbody > tr > td > img {
+            height: 100%;
+            vertical-align: inherit;
+        }
+
+@media (min-width: 667px) {
+    .table {
+        table-layout: fixed;
+    }
+}
