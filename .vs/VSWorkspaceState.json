@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\routes",
+    "\\src\\routes\\leaderboard"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\routes\\leaderboard\\Leaderboard.module.css",
   "PreviewInSolutionExplorer": false
 }
