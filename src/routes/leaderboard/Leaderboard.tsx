@@ -74,6 +74,17 @@ const Leaderboard = () => {
         history.push(`/pvp/${p1.PersonaId}/${p1.Platform}/${p1.Name}/${p2.PersonaId}/${p2.Platform}/${p2.Name}`);
     }
 
+    const GetIcon = (platform: string): string => {
+        let icon: string;
+        switch (platform) {
+            case "pc": icon = pc; break;
+            case "ps4": icon = playstation; break;
+            case "xboxone": icon = xbox; break;
+            default: icon = globe; break;
+        };
+        return icon;
+    }
+
     return (
         <Fragment>
             <div style={{ backgroundImage: `url(/pictures/${params.id}.jpg)` }} className={styles.background}>
@@ -82,15 +93,8 @@ const Leaderboard = () => {
             <div className={styles.container}>
                 <div className={styles.platformCountContainer}>
                     {state?.PlatformRunCounts?.map((x, i) => {
-                        let icon: string;
-                        switch (x.Platform) {
-                            case "pc": icon = pc; break;
-                            case "ps4": icon = playstation; break;
-                            case "xboxone": icon = xbox; break;
-                            default: icon = globe; break;
-                        };
                         return <div key={i}>
-                            <img src={icon} /><span>{x.RunCount.toLocaleString()}</span>
+                            <img src={GetIcon(x.Platform)} /><span>{x.RunCount.toLocaleString()}</span>
                         </div>
                     })}
                 </div>
@@ -115,20 +119,12 @@ const Leaderboard = () => {
                     </thead>
                     <tbody>
                         {state?.Leaderboard?.map((x, i) => {
-                            let icon: string;
-                            switch (x.platform) {
-                                case "pc": icon = pc; break;
-                                case "ps4": icon = playstation; break;
-                                case "xboxone": icon = xbox; break;
-                                default: icon = ""; break;
-                            };
-
                             return (
                                 <tr key={i} id={x.personaId}>
                                     <td>{i + 1}</td>
                                     <td><Link to={`/persona/${x.platform}/${x.personaId}/${x.name}`}>{x.name}</Link></td>
                                     <td>{ScoreFormatter(x.score)}</td>
-                                    <td><img src={icon} /></td>
+                                    <td><img src={GetIcon(x.platform)} /></td>
                                 </tr>
                             );
                         })}

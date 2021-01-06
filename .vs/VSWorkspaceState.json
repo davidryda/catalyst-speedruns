@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\components",
+    "\\src\\components\\navbar",
     "\\src\\routes",
     "\\src\\routes\\leaderboard"
   ],
-  "SelectedNode": "\\src\\routes\\leaderboard\\Leaderboard.module.css",
+  "SelectedNode": "\\src\\index.css",
   "PreviewInSolutionExplorer": false
 }

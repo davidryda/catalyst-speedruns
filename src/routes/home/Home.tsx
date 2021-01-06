@@ -6,6 +6,9 @@ const Home = () => {
     return (
         <div>
             <button onClick={() => history.push("/dashes")}>Dashes</button>
+            <button onClick={() => history.push("/strats")}>Strats</button>
+            <button onClick={() => history.push("/movement")}>Movement</button>
+            <button onClick={() => history.push("/tutorials")}>Tutorials</button>
         </div>
     );
 }

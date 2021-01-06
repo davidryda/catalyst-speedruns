@@ -1,0 +1,41 @@
+.background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    color: white;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 400px;
+    width: 275px;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 10px;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .container {
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@supports (-webkit-backdrop-filter: blur(10px)) {
+    .container {
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
