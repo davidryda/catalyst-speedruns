@@ -7,22 +7,21 @@
 .container {
     position: relative;
     height: 70px;
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: var(--navbarBackgroundColorFallback);
     width: 100%;
 }
 
-@supports (backdrop-filter: blur(10px)) {
+@supports (backdrop-filter: var(--navbarBlurAmount)) {
     .container {
-        backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: var(--navbarBlurAmount);
+        background-color: var(--navbarBackgroundColor);
     }
 }
 
-@supports (-webkit-backdrop-filter: blur(10px)) {
+@supports (-webkit-backdrop-filter: var(--navbarBlurAmount)) {
     .container {
-        -webkit-backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.7);
+        -webkit-backdrop-filter: var(--navbarBlurAmount);
+        background-color: var(--navbarBackgroundColor);
     }
 }
 
@@ -74,7 +73,7 @@
         border: none;
         background-color: transparent;
         height: 100%;
-        padding: 0;
+        padding: 0 0 0 20px; /*left padding makes pressing the menu button easier*/
     }
 
         .menuButtonContainer > button:hover {
@@ -86,14 +85,50 @@
             height: 100%;
         }
 
+.menuBackdrop {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: var(--navbarMenuBackdropColor);
+}
+
 .menu {
-    background-color: white;
+    background-color: var(--navbarMenuBackgroundColorFallback);
     min-width: 275px;
     position: absolute;
     right: 0;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 0 5px;
 }
+
+    .menu > button {
+        color: white;
+        background-color: transparent;
+        border: none;
+        padding: 20px 0;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .menu > button:hover {
+        cursor: pointer;
+    }
 
     .menuClosed {
         display: none;
     }
+
+@supports (backdrop-filter: var(--navbarMenuBlurAmount)) {
+    .menu {
+        backdrop-filter: var(--navbarMenuBlurAmount);
+        background-color: var(--navbarMenuBackgroundColor);
+    }
+}
+
+@supports (-webkit-backdrop-filter: var(--navbarMenuBlurAmount)) {
+    .menu {
+        -webkit-backdrop-filter: var(--navbarMenuBlurAmount);
+        background-color: var(--navbarMenuBackgroundColor);
+    }
+}

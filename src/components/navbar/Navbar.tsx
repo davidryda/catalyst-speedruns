@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useCallback, useEffect } from 'react';
 import styles from './Navbar.module.css';
 import websiteIcon from '../../../public/icons/mirrors_edge_icon_white.png';
 import NavbarTitleContext from '../../contexts/NavbarTitleContext';
@@ -13,6 +13,15 @@ const Navbar = () => {
     const [isMenuOpen, SetIsMenuOpen] = useState<boolean>(false);
     const location = useHistory();
 
+    //const clickListener = useCallback((e: MouseEvent) => {
+    //    if (isMenuOpen) SetIsMenuOpen(false)
+    //}, []);
+
+    //useEffect(() => {
+    //    document.addEventListener("click", clickListener);
+    //    return () => document.removeEventListener("click", clickListener);
+    //}, []);
+
     const menuHandler = (route: string) => {
         switch (route) {
             case "/dashes": location.push(route); break;
@@ -22,7 +31,6 @@ const Navbar = () => {
             case "settings": settingsContext.SetIsSettingsOpen(true); break;
             default: location.push("/"); break;
         }
-        SetIsMenuOpen(false);
     }
 
     return (
@@ -34,13 +42,16 @@ const Navbar = () => {
                     <div className={styles.menuButtonContainer}><button onClick={() => SetIsMenuOpen(!isMenuOpen)}><img src={isMenuOpen ? menuOpenIcon : menuIcon} /></button></div>
                 </div>
             </div>
-            <div className={isMenuOpen ? styles.menu : styles.menuClosed}>
-                <button onClick={() => menuHandler("/dashes")}>Dashes</button>
-                <button onClick={() => menuHandler("/strats")}>Strats</button>
-                <button onClick={() => menuHandler("/movement")}>Movement</button>
-                <button onClick={() => menuHandler("/tutorials")}>Tutorials</button>
-                <button onClick={() => menuHandler("settings")}>Settings</button>
+            <div onClick={() => SetIsMenuOpen(false)} className={isMenuOpen ? styles.menuBackdrop : styles.menuClosed}>
+                <div className={styles.menu}>
+                    <button onClick={() => menuHandler("/dashes")}>Dashes</button>
+                    <button onClick={() => menuHandler("/strats")}>Strats</button>
+                    <button onClick={() => menuHandler("/movement")}>Movement</button>
+                    <button onClick={() => menuHandler("/tutorials")}>Tutorials</button>
+                    <button onClick={() => menuHandler("settings")}>Settings</button>
+                </div>
             </div>
+            
         </div>
     );
 }

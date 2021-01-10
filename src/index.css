@@ -1,9 +1,18 @@
 /*https://codepen.io/tigt/post/fixing-the-white-glow-in-the-css-blur-filter*/
 
+@font-face {
+    font-family: Ubuntu-Regular;
+    src: local('Ubuntu-Regular'), url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: SanFrancisco-Regular;
+    src: local('SanFrancisco-Regular'), url('/fonts/SanFrancisco-Regular.ttf') format('truetype');
+}
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'SanFrancisco-Regular', 'Ubuntu-Regular', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: black;

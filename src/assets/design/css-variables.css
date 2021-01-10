@@ -1,0 +1,24 @@
+:root {
+    --name-of-variable: #000000;
+    /*Navbar*/
+    --navbarBlurAmount: blur(10px);
+    --navbarBackgroundColor: rgba(0, 0, 0, 0.7);
+    --navbarBackgroundColorFallback: rgba(0, 0, 0, 0.95);
+    /*Navbar Menu*/
+    --navbarMenuBlurAmount: blur(10px);
+    --navbarMenuBackgroundColor: rgba(25, 25, 25, 0.5);
+    --navbarMenuBackgroundColorFallback: rgba(25, 25, 25, 0.9);
+    /*Navbar Menu Backdrop*/
+    --navbarMenuBackdropColor: rgba(0, 0, 0, 0.3);
+    /*Settings*/
+    --settingsContainerBlurAmount: blur(10px);
+    --settingsContainerBackgroundColor: rgba(25, 25, 25, 0.5);
+    --settingsContainerBackgroundColorFallback: rgba(25, 25, 25, 0.9);
+    --settingsBackgroundColor: rgba(0, 0, 0, 0.3);
+    /*Dash Button*/
+    --dashButtonBackgroundBlurAmount: blur(5px);
+    --dashButtonBackgroundColor: rgba(0,0,0,0.65);
+    /*Leaderboard Background*/
+    --leaderboardBackgroundBlurAmount: blur(5px);
+    --leaderboardBackgroundColor: rgba(0,0,0,0.65);
+}

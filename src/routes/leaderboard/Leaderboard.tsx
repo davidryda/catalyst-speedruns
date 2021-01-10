@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, useEffect } from 'react';
+import React, { Fragment, useContext, useState, useEffect, CSSProperties } from 'react';
 import levels from '../../assets/Levels';
 import ScoreFormatter from '../../helpers/ScoreFormatter';
 import GetLevelName from '../../helpers/GetLevelName';
@@ -15,6 +15,8 @@ import * as Api from '../../helpers/Api';
 import type IPlayerSelectInfo from '../../models/PalyerSelectInfo';
 import SpeedrunApiHistoryContext from '../../contexts/SpeedrunApiHistoryContext';
 import EllipsisLoader from '../../components/loaders/EllipsisLoader';
+import SettingsContext from '../../contexts/SettingsContext';
+import Themes from '../../assets/design/themes';
 
 interface IRouteParams {
     id: string;
@@ -23,6 +25,7 @@ interface IRouteParams {
 const Leaderboard = () => {
     const [state, SetState] = useState<ILeaderboardStateEntities | null>(null);
     const [fastestAvailableRunLink, SetFastestAvailableRunLink] = useState<string | undefined>();
+    const settingsContext = useContext(SettingsContext);
     const navbarTitleContext = useContext(NavbarTitleContext);
     const mirrorsEdgeApiHistory = useContext(MirrorsEdgeApiHistoryContext);
     const speedrunApiHistory = useContext(SpeedrunApiHistoryContext);
@@ -85,9 +88,11 @@ const Leaderboard = () => {
         return icon;
     }
 
+    const backgroundStyle: CSSProperties = settingsContext.theme === Themes.Blur ? { backgroundImage: `url(/pictures/${params.id}.jpg)` } : {};
+
     return (
         <Fragment>
-            <div style={{ backgroundImage: `url(/pictures/${params.id}.jpg)` }} className={styles.background}>
+            <div style={backgroundStyle} className={styles.background}>
                 <div className={styles.backgroundColorLayer} />
             </div>
             <div className={styles.container}>

@@ -9,6 +9,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    background-color: transparent;
 }
 
 .button:not(:last-child) {
@@ -19,7 +20,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.5);
+    background-color: var(--dashButtonBackgroundColor);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,20 +40,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);
+    -webkit-filter: var(--dashButtonBackgroundBlurAmount);
+    -moz-filter: var(--dashButtonBackgroundBlurAmount);
+    -o-filter: var(--dashButtonBackgroundBlurAmount);
+    -ms-filter: var(--dashButtonBackgroundBlurAmount);
+    filter: var(--dashButtonBackgroundBlurAmount);
     background-position: center;
     transform: scale(1.1);
 }
 
 @media (min-width: 767px) {
-    .container {
-        
-    }
-
     .button {
         height: 200px;
         width: calc((100% / 2) - (5px / 2));

@@ -8,13 +8,13 @@
     bottom: 0;
     margin: auto;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--settingsBackgroundColor);
 }
 
 .container {
     color: white;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--settingsContainerBackgroundColorFallback);
     height: 400px;
     width: 275px;
     z-index: 3;
@@ -24,18 +24,60 @@
     bottom: 0;
     margin: auto;
     padding: 10px;
+    border-radius: 5px;
 }
 
-@supports (backdrop-filter: blur(10px)) {
+.title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.themeContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+}
+
+     .themeContainer > button {
+         background-color: transparent;
+         border: none;
+         height: 40px;
+         padding: 0 15px;
+     }
+
+        .themeContainer > button:hover {
+            cursor: pointer;
+        }
+
+        .themeContainer > button:last-child {
+            padding-right: 0;
+        }
+
+    .activeThemeIcon, .nonActiveThemeIcon {
+        height: 100%;
+    }
+
+    .activeThemeIcon {
+
+    }
+
+    .nonActiveThemeIcon {
+        opacity: 0.3;
+    }
+
+@supports (backdrop-filter: var(--settingsContainerBlurAmount)) {
     .container {
-        backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: var(--settingsContainerBlurAmount);
+        background-color: var(--settingsContainerBackgroundColor);
     }
 }
 
-@supports (-webkit-backdrop-filter: blur(10px)) {
+@supports (-webkit-backdrop-filter: var(--settingsContainerBlurAmount)) {
     .container {
-        -webkit-backdrop-filter: blur(10px);
-        background-color: rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: var(--settingsContainerBlurAmount);
+        background-color: var(--settingsContainerBackgroundColor);
     }
 }

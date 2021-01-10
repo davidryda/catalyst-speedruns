@@ -1,14 +1,16 @@
+//fonts
+//import './assets/fonts/Ubuntu-Regular.ttf';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
+import './assets/design/css-variables.css';
 import { NavbarTitleContextController } from './contexts/NavbarTitleContext';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { MirrorsEdgeApiHistoryContextController } from './contexts/MirrorsEdgeApiHistoryContext';
 import { SpeedrunApiHistoryContextController } from './contexts/SpeedrunApiHistoryContext';
 import { SettingsContextController } from './contexts/SettingsContext';
-//import { createBrowserHistory } from 'history';
-//export const history = createBrowserHistory();
 
 ReactDOM.render(
     <React.StrictMode>
