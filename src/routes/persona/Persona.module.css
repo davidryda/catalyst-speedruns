@@ -12,6 +12,10 @@
         border-top: 2px solid white;
     }
 
+    .table > thead > tr > th:hover {
+        cursor: pointer;
+    }
+
     .table > tbody > tr {
         height: 24px;
     }

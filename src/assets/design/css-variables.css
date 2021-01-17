@@ -19,6 +19,6 @@
     --dashButtonBackgroundBlurAmount: blur(5px);
     --dashButtonBackgroundColor: rgba(0,0,0,0.65);
     /*Leaderboard Background*/
-    --leaderboardBackgroundBlurAmount: blur(5px);
-    --leaderboardBackgroundColor: rgba(0,0,0,0.65);
+    --leaderboardBackgroundBlurAmount: blur(10px);
+    --leaderboardBackgroundColor: rgba(0,0,0,0.7);
 }

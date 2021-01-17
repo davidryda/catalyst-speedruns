@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     padding: 10px 15px;
+    justify-content: space-between;
 }
 
 .websiteIconContainer {
@@ -39,10 +40,14 @@
 }
 
     .websiteIconContainer > button {
+        flex: 1;
         border: none;
         background-color: transparent;
-        height: 100%;
+        height: inherit;
         padding: 0;
+        width: 50px;
+        display: flex;
+        justify-content: flex-start;
     }
 
         .websiteIconContainer > button:hover {
@@ -51,11 +56,11 @@
 
         .websiteIconContainer > button > img {
             opacity: 0.5;
-            height: 100%;
+            height: inherit;
+            padding: 0;
         }
 
 .navbarTitle {
-    flex: 5;
     color: white;
     text-align: center;
     font-size: 20px;

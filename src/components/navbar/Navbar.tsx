@@ -13,26 +13,6 @@ const Navbar = () => {
     const [isMenuOpen, SetIsMenuOpen] = useState<boolean>(false);
     const location = useHistory();
 
-    //const clickListener = useCallback((e: MouseEvent) => {
-    //    if (isMenuOpen) SetIsMenuOpen(false)
-    //}, []);
-
-    //useEffect(() => {
-    //    document.addEventListener("click", clickListener);
-    //    return () => document.removeEventListener("click", clickListener);
-    //}, []);
-
-    const menuHandler = (route: string) => {
-        switch (route) {
-            case "/dashes": location.push(route); break;
-            case "/strats": location.push(route); break;
-            case "/movement": location.push(route); break;
-            case "/tutorials": location.push(route); break;
-            case "settings": settingsContext.SetIsSettingsOpen(true); break;
-            default: location.push("/"); break;
-        }
-    }
-
     return (
         <div className={styles.position}>
             <div className={styles.container}>
@@ -44,14 +24,13 @@ const Navbar = () => {
             </div>
             <div onClick={() => SetIsMenuOpen(false)} className={isMenuOpen ? styles.menuBackdrop : styles.menuClosed}>
                 <div className={styles.menu}>
-                    <button onClick={() => menuHandler("/dashes")}>Dashes</button>
-                    <button onClick={() => menuHandler("/strats")}>Strats</button>
-                    <button onClick={() => menuHandler("/movement")}>Movement</button>
-                    <button onClick={() => menuHandler("/tutorials")}>Tutorials</button>
-                    <button onClick={() => menuHandler("settings")}>Settings</button>
+                    <button onClick={() => location.push("/dashes")}>Dashes</button>
+                    <button onClick={() => location.push("/strats")}>Strats</button>
+                    <button onClick={() => location.push("/movement")}>Movement</button>
+                    <button onClick={() => location.push("/tutorials")}>Tutorials</button>
+                    <button onClick={() => settingsContext.SetIsSettingsOpen(true)}>Settings</button>
                 </div>
             </div>
-            
         </div>
     );
 }

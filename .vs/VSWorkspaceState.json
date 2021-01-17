@@ -1,14 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
     "\\src\\assets",
     "\\src\\assets\\design",
     "\\src\\components",
+    "\\src\\components\\navbar",
+    "\\src\\components\\settings",
+    "\\src\\contexts",
     "\\src\\routes",
     "\\src\\routes\\dashes"
   ],
-  "SelectedNode": "\\src\\routes\\dashes\\Dashes.module.css",
+  "SelectedNode": "\\src\\assets\\design\\css-variables.css",
   "PreviewInSolutionExplorer": false
 }
