@@ -3,14 +3,11 @@
     "",
     "\\src",
     "\\src\\assets",
-    "\\src\\assets\\design",
-    "\\src\\components",
-    "\\src\\components\\navbar",
-    "\\src\\components\\settings",
-    "\\src\\contexts",
+    "\\src\\helpers",
     "\\src\\routes",
-    "\\src\\routes\\dashes"
+    "\\src\\routes\\dashes",
+    "\\src\\routes\\persona"
   ],
-  "SelectedNode": "\\src\\assets\\design\\css-variables.css",
+  "SelectedNode": "\\src\\assets\\Levels.ts",
   "PreviewInSolutionExplorer": false
 }

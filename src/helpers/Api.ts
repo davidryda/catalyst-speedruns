@@ -10,6 +10,9 @@ import type IPersonaStats from "../models/PersonaStats";
 import type IPlayerInfoResponse from "../models/PlayerInfoResponse";
 import type IPvpInfo from "../models/PvpInfo";
 import type ILevelResponse from "../models/Speedrun/LevelResponse";
+import correctedScores from "../assets/CorrectedScores";
+import CorrectLeaderboardScores from "./CorrectLeaderboardScores";
+import CorrectRunnerScores from "./CorrectRunnerScores";
 
 export async function GetRunnersRouteLeaderboards(levelId: string): Promise<ILeaderboardStateEntities> {
     const requestParameters = {
@@ -30,9 +33,11 @@ export async function GetRunnersRouteLeaderboards(levelId: string): Promise<ILea
     }
     leaderboardResponses.forEach(r => r.leaderboardResponse.result.leaderboard.users.forEach(user => user.platform = r.platform));
     let allRunners = leaderboardResponses.flatMap(r => r.leaderboardResponse.result.leaderboard.users);
-    let filteredRunners = allRunners.filter(user => banList.indexOf(+user.personaId) < 0).sort((a, b) => +a.score - +b.score);
+    let filteredRunners = allRunners.filter(user => banList.indexOf(+user.personaId) < 0);
     let prcs: IPlatformRunCount[] = leaderboardResponses.map(x => ({ Platform: x.platform, RunCount: x.leaderboardResponse.result.leaderboard.totalCount }));
     prcs.push({ Platform: "total", RunCount: prcs.map(x => x.RunCount).reduce((a, b) => a + b) });
+
+    filteredRunners = CorrectLeaderboardScores(levelId, filteredRunners).sort((a, b) => +a.score - +b.score);
 
     const leaderboardStateEntities: ILeaderboardStateEntities = {
         Leaderboard: filteredRunners,
@@ -55,7 +60,11 @@ export async function GetRunnersRouteData(personaId: string, platform: string): 
         body: JSON.stringify(requestContent)
     }).then(r => r.json())
         .then((data: IPersonaStats) => {
-            resultItemArr = data.result;
+            resultItemArr = CorrectRunnerScores(personaId, data.result);
+            resultItemArr = resultItemArr.map(x => {
+                if (!x.userRank) x.userRank = { rank: 0, score: "0", total: 0 };
+                return x;
+            });
         })
     //.catch((e: Response) => alert(e.status));
     return resultItemArr;

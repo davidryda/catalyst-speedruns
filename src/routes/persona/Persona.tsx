@@ -104,7 +104,7 @@ const Persona = () => {
                         const year = date.getUTCFullYear();
                         const href = `/leaderboard/${r.id}`
                         const levelName = levels.find(x => x.Id === r.id)?.Name;
-                        const score = ScoreFormatter(r.userStats?.finishTime)
+                        const score = ScoreFormatter(r.userRank?.score)
                         const dateObtained = r.userStats?.finishedAt == null ? null : `${month}/${day}/${year}`;
                         return (
                             <tr key={i}>
