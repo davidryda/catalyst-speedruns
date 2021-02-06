@@ -1,13 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\assets",
-    "\\src\\helpers",
-    "\\src\\routes",
-    "\\src\\routes\\dashes",
-    "\\src\\routes\\persona"
+    ""
   ],
-  "SelectedNode": "\\src\\assets\\Levels.ts",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }
