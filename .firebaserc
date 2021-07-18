@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "mirrorsedge"
+    "default": "catalystspeedruns"
+  },
+  "targets": {
+    "catalystspeedruns": {
+      "hosting": {
+        "mirrorsedge": [
+          "mirrorsedge"
+        ]
+      }
+    }
   }
 }
