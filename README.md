@@ -1,4 +1,15 @@
-# New Project
+# Catalyst Speedruns
+**Live site:** https://mirrorsedge.web.app/
+
+This site is used a hub for the Mirror's Edge: Catalyst speedrun community.
+
+Features provided by the site include:
+- An official leaderboard that has cheated times removed
+- Access to a database that has community sourced strats that have been discovered
+- A set of videos and text showcasing the movement tech available in the game
+- A collection of tutorials regarding everything from strats, tech, and category runs
+
+### All of these features are being worked on and could change at any moment
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
