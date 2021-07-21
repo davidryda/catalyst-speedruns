@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\routes",
+    "\\src\\routes\\strats"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\routes\\strats\\Strats.tsx",
   "PreviewInSolutionExplorer": false
 }

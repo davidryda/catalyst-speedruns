@@ -13,6 +13,7 @@ import type ILevelResponse from "../models/Speedrun/LevelResponse";
 import correctedScores from "../assets/CorrectedScores";
 import CorrectLeaderboardScores from "./CorrectLeaderboardScores";
 import CorrectRunnerScores from "./CorrectRunnerScores";
+import type ILevel from "../models/mirrorsedgecatalystapi/Level";
 
 export async function GetRunnersRouteLeaderboards(levelId: string): Promise<ILeaderboardStateEntities> {
     const requestParameters = {
@@ -108,4 +109,20 @@ export async function GetFastestAvailableRunVideoLink(levelId: string): Promise<
             if (!link) alert("Could not find fastest run video link!");
         });
     return link;
+}
+
+export async function FetchLevels(): Promise<ILevel[]> {
+    let levels: ILevel[] = [];
+    await fetch("https://mirrorsedgecatalyst.herokuapp.com/mec/levels")
+        .then(r => {
+            if (r.status != 200) {
+                alert(`Failed to fetch level types. Status Code: ${r.status}`);
+                return levels;
+            } 
+            return r.json();
+        })
+        .then((data: ILevel[]) => {
+            levels = data;
+        });
+    return levels;
 }
