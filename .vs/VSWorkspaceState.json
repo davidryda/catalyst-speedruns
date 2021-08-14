@@ -2,9 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\helpers",
+    "\\src\\models",
+    "\\src\\models\\mirrorsedgecatalystapi",
     "\\src\\routes",
+    "\\src\\routes\\leaderboard",
+    "\\src\\routes\\pvp",
     "\\src\\routes\\strats"
   ],
-  "SelectedNode": "\\src\\routes\\strats\\Strats.tsx",
+  "SelectedNode": "\\src\\helpers\\Api.ts",
   "PreviewInSolutionExplorer": false
 }

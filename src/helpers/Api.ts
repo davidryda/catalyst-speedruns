@@ -64,6 +64,7 @@ export async function GetRunnersRouteData(personaId: string, platform: string): 
             resultItemArr = CorrectRunnerScores(personaId, data.result);
             resultItemArr = resultItemArr.map(x => {
                 if (!x.userRank) x.userRank = { rank: 0, score: "0", total: 0 };
+                if (!x.userStats) x.userStats = { finishedAt: "0", finishTime: "0", extraStats: null, runId: x.id };
                 return x;
             });
         })

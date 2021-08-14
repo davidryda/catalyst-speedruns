@@ -105,7 +105,7 @@ const Persona = () => {
                         const href = `/leaderboard/${r.id}`
                         const levelName = levels.find(x => x.Id === r.id)?.Name;
                         const score = ScoreFormatter(r.userRank?.score)
-                        const dateObtained = r.userStats?.finishedAt == null ? null : `${month}/${day}/${year}`;
+                        const dateObtained = (r.userStats?.finishedAt === null || r.userStats?.finishedAt === "0") ? null : `${month}/${day}/${year}`;
                         return (
                             <tr key={i}>
                                 <td><Link to={href}>{levelName}</Link></td>

@@ -127,7 +127,7 @@ const Leaderboard = () => {
                             return (
                                 <tr key={i} id={x.personaId}>
                                     <td>{i + 1}</td>
-                                    <td><Link to={`/persona/${x.platform}/${x.personaId}/${x.name}`}>{x.name}</Link></td>
+                                    <td><Link to={`/persona/${x.platform}/${x.personaId}/${x.name ?? "[Name not found]"}`}>{x.name ?? "[Name not found]"}</Link></td>
                                     <td>{ScoreFormatter(x.score)}</td>
                                     <td><img src={GetIcon(x.platform)} /></td>
                                 </tr>

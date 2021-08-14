@@ -3,23 +3,21 @@ import styles from './Strats.module.css';
 import NavbarTitleContext from '../../contexts/NavbarTitleContext';
 import * as Api from '../../helpers/Api';
 import type ILevel from '../../models/mirrorsedgecatalystapi/Level';
+import GlobalDataContext from '../../contexts/GlobalDataContext';
 
 const Strats = () => {
+    const globalDataContext = useContext(GlobalDataContext);
     const navbarTitleContext = useContext(NavbarTitleContext);
-    const [levels, SetLevels] = useState<ILevel[]>([]);
 
     useEffect(() => {
         navbarTitleContext.SetNavbarTitle("Strats");
-        Api.FetchLevels().then(r => {
-            console.log(r);
-            SetLevels(r);
-        });
+        if (globalDataContext?.Levels === null) Api.FetchLevels().then(r => globalDataContext?.SetLevels(r));
         return () => navbarTitleContext.SetNavbarTitle("");
     }, []);
 
     return (
         <div>
-            {levels?.map(l => {
+            {globalDataContext.Levels?.map(l => {
                 return <div className={styles.container} key={l.Id} id={l.Id.toString()}>
                     {l.Name}
                 </div>

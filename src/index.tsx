@@ -11,18 +11,21 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { MirrorsEdgeApiHistoryContextController } from './contexts/MirrorsEdgeApiHistoryContext';
 import { SpeedrunApiHistoryContextController } from './contexts/SpeedrunApiHistoryContext';
 import { SettingsContextController } from './contexts/SettingsContext';
+import { GlobalDataContextController } from './contexts/GlobalDataContext';
 
 ReactDOM.render(
     <React.StrictMode>
         <Router>
             <SettingsContextController>
-                <MirrorsEdgeApiHistoryContextController>
-                    <SpeedrunApiHistoryContextController>
-                        <NavbarTitleContextController>
-                            <App />
-                        </NavbarTitleContextController>
-                    </SpeedrunApiHistoryContextController>
-                </MirrorsEdgeApiHistoryContextController>
+                <GlobalDataContextController>
+                    <MirrorsEdgeApiHistoryContextController>
+                        <SpeedrunApiHistoryContextController>
+                            <NavbarTitleContextController>
+                                <App />
+                            </NavbarTitleContextController>
+                        </SpeedrunApiHistoryContextController>
+                    </MirrorsEdgeApiHistoryContextController>
+                </GlobalDataContextController>
             </SettingsContextController>
         </Router>
     </React.StrictMode>,
