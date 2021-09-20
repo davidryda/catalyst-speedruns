@@ -1,1 +1,0 @@
-export default "/icons/dark_mode.svg";

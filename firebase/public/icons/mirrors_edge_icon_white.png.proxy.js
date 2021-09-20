@@ -1,1 +1,0 @@
-export default "/icons/mirrors_edge_icon_white.png";

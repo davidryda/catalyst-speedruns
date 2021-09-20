@@ -1,1 +1,0 @@
-export default "/icons/menu_open.svg";
