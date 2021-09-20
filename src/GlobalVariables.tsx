@@ -1,0 +1,1 @@
+export const MEC_API = import.meta.env.MODE === 'production' ? import.meta.env.MEC_API_PRODUCTION : import.meta.env.MEC_API_DEVELOPMENT;

@@ -1,0 +1,139 @@
+.position {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    height: 70px;
+    background-color: var(--navbarBackgroundColorFallback);
+    width: 100%;
+}
+
+@supports (backdrop-filter: var(--navbarBlurAmount)) {
+    .container {
+        backdrop-filter: var(--navbarBlurAmount);
+        background-color: var(--navbarBackgroundColor);
+    }
+}
+
+@supports (-webkit-backdrop-filter: var(--navbarBlurAmount)) {
+    .container {
+        -webkit-backdrop-filter: var(--navbarBlurAmount);
+        background-color: var(--navbarBackgroundColor);
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    justify-content: space-between;
+}
+
+.websiteIconContainer {
+    flex: 1;
+    height: 30px;
+}
+
+    .websiteIconContainer > button {
+        flex: 1;
+        border: none;
+        background-color: transparent;
+        height: inherit;
+        padding: 0;
+        width: 50px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+        .websiteIconContainer > button:hover {
+            cursor: pointer;
+        }
+
+        .websiteIconContainer > button > img {
+            opacity: 0.5;
+            height: inherit;
+            padding: 0;
+        }
+
+.navbarTitle {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menuButtonContainer {
+    flex: 1;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+    .menuButtonContainer > button {
+        border: none;
+        background-color: transparent;
+        height: 100%;
+        padding: 0 0 0 20px; /*left padding makes pressing the menu button easier*/
+    }
+
+        .menuButtonContainer > button:hover {
+            cursor: pointer;
+        }
+
+        .menuButtonContainer > button > img {
+            opacity: 0.5;
+            height: 100%;
+        }
+
+.menuBackdrop {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: var(--navbarMenuBackdropColor);
+}
+
+.menu {
+    background-color: var(--navbarMenuBackgroundColorFallback);
+    min-width: 275px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 0 5px;
+}
+
+    .menu > button {
+        color: white;
+        background-color: transparent;
+        border: none;
+        padding: 20px 0;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .menu > button:hover {
+        cursor: pointer;
+    }
+
+    .menuClosed {
+        display: none;
+    }
+
+@supports (backdrop-filter: var(--navbarMenuBlurAmount)) {
+    .menu {
+        backdrop-filter: var(--navbarMenuBlurAmount);
+        background-color: var(--navbarMenuBackgroundColor);
+    }
+}
+
+@supports (-webkit-backdrop-filter: var(--navbarMenuBlurAmount)) {
+    .menu {
+        -webkit-backdrop-filter: var(--navbarMenuBlurAmount);
+        background-color: var(--navbarMenuBackgroundColor);
+    }
+}

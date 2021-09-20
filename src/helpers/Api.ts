@@ -14,6 +14,7 @@ import correctedScores from "../assets/CorrectedScores";
 import CorrectLeaderboardScores from "./CorrectLeaderboardScores";
 import CorrectRunnerScores from "./CorrectRunnerScores";
 import type ILevel from "../models/mirrorsedgecatalystapi/Level";
+import { MEC_API } from "../GlobalVariables";
 
 export async function GetRunnersRouteLeaderboards(levelId: string): Promise<ILeaderboardStateEntities> {
     const requestParameters = {
@@ -114,7 +115,7 @@ export async function GetFastestAvailableRunVideoLink(levelId: string): Promise<
 
 export async function FetchLevels(): Promise<ILevel[]> {
     let levels: ILevel[] = [];
-    await fetch("https://mirrorsedgecatalyst.herokuapp.com/mec/levels")
+    await fetch(`${MEC_API}mec/levels`)
         .then(r => {
             if (r.status != 200) {
                 alert(`Failed to fetch level types. Status Code: ${r.status}`);

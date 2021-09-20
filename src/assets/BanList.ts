@@ -140,6 +140,8 @@ const banList: number[] = [
     1748490630,
     591727875,
     1911007352,
+    1700039013,
+    1005068838924,
 ]
 
 export default banList;

@@ -1,0 +1,1 @@
+export default "/icons/playstation_white.svg";
