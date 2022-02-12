@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\helpers"
+    "\\src\\assets",
+    "\\src\\components",
+    "\\src\\components\\settings"
   ],
+  "SelectedNode": "\\src\\components\\settings\\Settings.tsx",
   "PreviewInSolutionExplorer": false
 }
